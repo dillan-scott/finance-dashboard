@@ -1,1 +1,1 @@
-# predictive-market-dashboard
+# Market Dashboard with Predictive Insights
