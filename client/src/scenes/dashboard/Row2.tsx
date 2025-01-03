@@ -30,13 +30,13 @@ const pieData = [
 const Row2 = () => {
   const { palette } = useTheme();
   const pieColors = [palette.primary[800], palette.primary[300]];
-  const { data: operationaldata } = useGetKpisQuery();
+  const { data: kpiData } = useGetKpisQuery();
   const { data: productData } = useGetProductsQuery();
 
   const operationalVsNonOperational = useMemo(() => {
     return (
-      operationaldata &&
-      operationaldata[0].monthlyData.map(
+      kpiData &&
+      kpiData[0].monthlyData.map(
         ({ month, nonOperationalExpenses, operationalExpenses }) => {
           return {
             name: month.substring(0, 3),
@@ -46,7 +46,7 @@ const Row2 = () => {
         }
       )
     );
-  }, [operationaldata]);
+  }, [kpiData]);
 
   const productExpenseData = useMemo(() => {
     return (
