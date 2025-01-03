@@ -1,4 +1,3 @@
-import React from "react";
 import { useMemo } from "react";
 import DashboardBox from "../../components/DashboardBox";
 import { useGetKpisQuery } from "../../state/api";

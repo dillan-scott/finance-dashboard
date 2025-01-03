@@ -11,10 +11,17 @@ export default [
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
+    settings: {
+      react: {
+        version: "detect", // Automatically detect the React version
+      },
+    },
     rules: {
       "no-unused-vars": "warn",
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/no-empty-object-type": "warn",
+      "react/react-in-jsx-scope": "off", // React 17+ doesn't require React in scope
+      "react/jsx-uses-react": "off", // Prevents warnings about unused React import
     },
   },
 ];
