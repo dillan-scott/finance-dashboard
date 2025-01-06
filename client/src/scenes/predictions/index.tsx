@@ -78,7 +78,7 @@ const Predictions = () => {
               <Label value="Month" offset={-5} position="insideBottom" />
             </XAxis>
             <YAxis
-              domain={[12000, 26000]}
+              domain={[12000, 27000]}
               tickLine={false}
               axisLine={{ strokeWidth: "0" }}
               style={{ fontSize: "10px" }}
