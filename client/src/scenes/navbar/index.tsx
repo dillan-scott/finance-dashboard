@@ -1,12 +1,13 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import PixIcon from "@mui/icons-material/Pix";
 import { useTheme, Typography, Box } from "@mui/material";
 import FlexBetween from "../../components/FlexBetween";
 
 const Navbar = () => {
   const { palette } = useTheme();
-  const [selected, setSelected] = useState("dashboard");
+  const location = useLocation();
+  const currentPath = location.pathname;
+  console.log(currentPath);
   return (
     <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
       {/* LEFT SIDE */}
@@ -19,24 +20,23 @@ const Navbar = () => {
 
       {/* RIGHT SIDE */}
       <FlexBetween gap="2rem">
-        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+        <Box>
           <Link
             to="/"
-            onClick={() => setSelected("dashboard")}
             style={{
-              color: selected === "dashboard" ? "inherit" : palette.grey[700],
+              color: currentPath === "/" ? "inherit" : palette.grey[700],
               textDecoration: "inherit",
             }}
           >
             dashboard
           </Link>
         </Box>
-        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+        <Box>
           <Link
             to="/predictions"
-            onClick={() => setSelected("predictions")}
             style={{
-              color: selected === "predictions" ? "inherit" : palette.grey[700],
+              color:
+                currentPath === "/predictions" ? "inherit" : palette.grey[700],
               textDecoration: "inherit",
             }}
           >
